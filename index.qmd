@@ -1,7 +1,30 @@
 ---
 title: "Create and Publish Websites with Quarto"
+author: "Ruslan Khafizov"
+format: revealjs
 ---
 
-This is a Quarto website.
+## Overview
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+- Quarto Pub
+- GitHub Pages
+    - Render to `docs`
+    - `quarto publish`
+    - GitHub Action
+        - quarto-actions
+        - deploy-pages
+
+
+## Quarto Pub
+
+Just works.
+Can set up as a default page.
+
+## GH Pages render to docs
+
+
+## GH Pages quarto publish
+
+## GH Pages GH Actions quarto-actions
+
+## GH Pages GH Actions deploy-pages
