@@ -22,6 +22,46 @@ Can set up as a default page.
 
 ## GH Pages render to docs
 
+Requires 2 config changes and 2 actions.
+
+- Change _quarto.yml
+- Render `doc`
+- Push `doc` to GH
+- Change GH config to display `doc`
+
+---
+
+### Change _quarto.yml
+
+```{.yaml code-line-numbers="3"}
+project:
+  type: website
+  output-dir: docs
+```
+
+---
+
+### Render `doc`
+
+```{.bash}
+quarto render
+```
+
+---
+
+### Push rendered site to GH
+
+```{.bash}
+git add docs
+git commit -m "Publish site to docs/"
+git push
+```
+
+---
+
+### Change GH pages config
+
+Live Demo
 
 ## GH Pages quarto publish
 
