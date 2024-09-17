@@ -61,10 +61,26 @@ git push
 
 ### Change GH pages config
 
-Live Demo
+Live Demo.
+
+::: aside
+Reminder: change Title Slide
+:::
 
 ## GH Pages quarto publish
 
+Requires config change, one one-off action and one action to publish.
+
+- Set up gh-pages branch (one-off)
+- Change GH config to display `gh-pages` branch
+- `quarto publish gh-pages`
+
 ## GH Pages GH Actions quarto-actions
+
+Requires config change,
+
+- Set up gh-pages branch (one-off)
+- Change GH config to display `gh-pages` branch
+- `quarto publish gh-pages`
 
 ## GH Pages GH Actions deploy-pages
