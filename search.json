@@ -25,21 +25,21 @@
     "href": "index.html#gh-pages-render-to-docs",
     "title": "Create and Publish Websites with Quarto",
     "section": "GH Pages render to docs",
-    "text": "GH Pages render to docs"
+    "text": "GH Pages render to docs\nRequires 2 config changes and 2 actions.\n\nChange _quarto.yml\nRender doc\nPush doc to GH\nChange GH config to display doc"
   },
   {
     "objectID": "index.html#gh-pages-quarto-publish",
     "href": "index.html#gh-pages-quarto-publish",
     "title": "Create and Publish Websites with Quarto",
     "section": "GH Pages quarto publish",
-    "text": "GH Pages quarto publish"
+    "text": "GH Pages quarto publish\nRequires config change, one one-off action and one action to publish.\n\nSet up gh-pages branch (one-off)\nChange GH config to display gh-pages branch\nquarto publish gh-pages"
   },
   {
     "objectID": "index.html#gh-pages-gh-actions-quarto-actions",
     "href": "index.html#gh-pages-gh-actions-quarto-actions",
     "title": "Create and Publish Websites with Quarto",
     "section": "GH Pages GH Actions quarto-actions",
-    "text": "GH Pages GH Actions quarto-actions"
+    "text": "GH Pages GH Actions quarto-actions\nRequires config change,\n\nSet up gh-pages branch (one-off)\nChange GH config to display gh-pages branch\nquarto publish gh-pages"
   },
   {
     "objectID": "index.html#gh-pages-gh-actions-deploy-pages",
