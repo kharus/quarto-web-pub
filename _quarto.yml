@@ -2,6 +2,9 @@ project:
   type: website
   output-dir: docs
 
+execute:
+  freeze: auto
+
 website:
   title: "Create and Publish Websites with Quarto"
   navbar:
@@ -15,6 +18,3 @@ format:
     theme: cosmo
     css: styles.css
     toc: true
-
-
-
