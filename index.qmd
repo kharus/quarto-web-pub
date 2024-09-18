@@ -83,4 +83,20 @@ Requires config change,
 - Change GH config to display `gh-pages` branch
 - `quarto publish gh-pages`
 
+---
+Just any graph to trigger freeze
+
+```{r}
+#| label: fig-airquality
+#| fig-cap: "Temperature and ozone level."
+#| warning: false
+
+library(ggplot2)
+
+ggplot(airquality, aes(Temp, Ozone)) + 
+  geom_point() + 
+  geom_smooth(method = "loess")
+```
+
+
 ## GH Pages GH Actions deploy-pages
