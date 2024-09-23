@@ -2,6 +2,7 @@
 title: "Create and Publish Websites with Quarto"
 author: "Ruslan Khafizov"
 format: revealjs
+subtitle: "Using GHA Upload"
 ---
 
 ## Overview
