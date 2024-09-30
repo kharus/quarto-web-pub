@@ -76,15 +76,54 @@ Requires config change, one one-off action and one action to publish.
 - Change GH config to display `gh-pages` branch
 - `quarto publish gh-pages`
 
+---
+
+### Set up gh-pages branch
+
+```{.bash}
+git checkout --orphan gh-pages
+git reset --hard # make sure all changes are committed before running this!
+git commit --allow-empty -m "Initialising gh-pages branch"
+git push origin gh-pages
+```
+
+---
+
+### Change GH config to display `gh-pages` branch
+
+Live demo
+
+---
+
+### `quarto publish gh-pages`
+
+```{.bash}
+quarto publish gh-pages
+```
+
 ## GH Pages GH Actions quarto-actions
 
 Requires config change,
 
 - Set up gh-pages branch (one-off)
 - Change GH config to display `gh-pages` branch
-- `quarto publish gh-pages`
+- GH Actions `quarto publish gh-pages`
 
 ---
+
+### GHA yaml - triggers
+
+```{.yaml}
+on:
+  workflow_dispatch:
+  push:
+    branches: main
+  pull_request:
+    branches:
+      - main
+```
+
+## Freeze
 Just any graph to trigger freeze
 
 ```{r}
