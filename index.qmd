@@ -123,8 +123,28 @@ on:
       - main
 ```
 
-## Freeze
-Just any graph to trigger freeze
+---
+
+### GHA yaml - dependencies and freeze
+
+```{.yaml}
+- name: Install R
+  uses: r-lib/actions/setup-r@v2
+  with:
+    r-version: '4.4.1'
+
+- name: Install R Dependencies
+  uses: r-lib/actions/setup-renv@v2
+  with:
+    cache-version: 1
+```
+
+---
+
+### Live demo: dependencies and freeze
+
+
+## I use this graph to trigger freeze
 
 ```{r}
 #| label: fig-airquality
@@ -139,4 +159,31 @@ ggplot(airquality, aes(Temp, Ozone)) +
 ```
 
 
-## GH Pages GH Actions deploy-pages
+## GH Pages GH Actions deploy-pages (Bonus)
+
+Requires config change,
+
+- Change GH pages source to `GitHub Actions`
+- GH Actions `deploy-pages`
+
+---
+
+### GHA yaml - dependencies and freeze
+
+```{.yaml}
+- run: quarto render
+
+- name: Setup Pages
+  uses: actions/configure-pages@v5
+
+- name: Upload artifact
+  uses: actions/upload-pages-artifact@v3
+  if: github.event_name != 'pull_request'
+  with:
+    path: '_site/'
+
+- name: Deploy to GitHub Pages
+  id: deployment
+  uses: actions/deploy-pages@v4
+  if: github.event_name != 'pull_request'
+```
