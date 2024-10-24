@@ -3,6 +3,8 @@ title: "Create and Publish Websites with Quarto"
 author: "Ruslan Khafizov"
 format: revealjs
 subtitle: "Using GHA Upload"
+mermaid:
+  theme: neutral
 ---
 
 ## Overview
@@ -19,9 +21,54 @@ subtitle: "Using GHA Upload"
 ## Quarto Pub
 
 Just works.
+
+```{mermaid}
+flowchart LR
+  subgraph local
+    a1[qmd]
+  end
+
+  subgraph qpub
+    a2[html]
+  end
+a1-- publish -->a2
+```
+
 Can set up as a default page.
 
 ## GH Pages render to docs
+
+```{mermaid}
+flowchart LR
+
+
+  subgraph local
+    direction LR
+    l1[qmd]
+    l2[html]
+  end
+
+
+  subgraph gh[Github]
+
+  subgraph two[git]
+    gh1[qmd]
+    gh2[html]
+  end
+
+
+  subgraph three[GH Pages]
+    gp2[html]
+  end
+  end
+
+
+  l1-- q publish -->l2
+  local-- push -->gh
+  gh2--->gp2
+```
+
+---
 
 Requires 2 config changes and 2 actions.
 
@@ -103,6 +150,37 @@ quarto publish gh-pages
 
 ## GH Pages GH Actions quarto-actions
 
+```{mermaid}
+flowchart LR
+  subgraph one
+    direction LR
+    l1[qmd]
+  end
+
+  subgraph gh[Github]
+    subgraph two[git]
+      gh2[qmd]
+      gh3[html]
+    end
+
+    subgraph three[GH Pages]
+      gp2[html]
+    end
+
+    subgraph four[GH Actions]
+    end
+
+  end
+
+
+  one-- push -->gh
+  gh2-->four
+  four-->gh3
+  gh3-->gp2
+```
+
+---
+
 Requires config change,
 
 - Set up gh-pages branch (one-off)
@@ -133,10 +211,53 @@ Just any graph to trigger freeze
 
 library(ggplot2)
 
-ggplot(airquality, aes(Temp, Ozone)) + 
-  geom_point() + 
-  geom_smooth(method = "loess")
+ggplot(airquality, aes(Temp, Ozone)) +
+    geom_point() +
+    geom_smooth(method = "loess")
 ```
 
 
 ## GH Pages GH Actions deploy-pages
+
+```{mermaid}
+flowchart LR
+
+
+   subgraph one
+     direction LR
+     l1[qmd]
+   end
+
+
+   subgraph gh[Github]
+
+
+
+
+   subgraph two[git]
+   gh2[qmd]
+
+
+   end
+
+
+   subgraph three[GH Pages]
+     gp2[html]
+   end
+
+
+   subgraph four[GH Actions]
+       gh3[html]
+   end
+
+
+   end
+
+
+   one-- push ---two
+   gh2---four
+   four---gh3
+   gh3---gp2
+```
+
+---
